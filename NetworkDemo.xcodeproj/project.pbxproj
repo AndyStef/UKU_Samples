@@ -16,6 +16,8 @@
 		8FB6EFB121F1402C004BC78F /* Threading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB6EFB021F1402C004BC78F /* Threading.swift */; };
 		8FB6EFB321F25A26004BC78F /* WebKitVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB6EFB221F25A26004BC78F /* WebKitVIew.swift */; };
 		8FB6EFB521F26BCC004BC78F /* GithubManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB6EFB421F26BCC004BC78F /* GithubManager.swift */; };
+		8FB6EFB721F6626D004BC78F /* ThreadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB6EFB621F6626D004BC78F /* ThreadingViewController.swift */; };
+		8FB6EFB921F6890F004BC78F /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB6EFB821F6890F004BC78F /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		8FB6EFB021F1402C004BC78F /* Threading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Threading.swift; sourceTree = "<group>"; };
 		8FB6EFB221F25A26004BC78F /* WebKitVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKitVIew.swift; sourceTree = "<group>"; };
 		8FB6EFB421F26BCC004BC78F /* GithubManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubManager.swift; sourceTree = "<group>"; };
+		8FB6EFB621F6626D004BC78F /* ThreadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadingViewController.swift; sourceTree = "<group>"; };
+		8FB6EFB821F6890F004BC78F /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 		8FB6EFAD21F1300A004BC78F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				8FB6EFB621F6626D004BC78F /* ThreadingViewController.swift */,
 				8FB6EF9A21F12AD9004BC78F /* MainViewController.swift */,
 				8FB6EFB221F25A26004BC78F /* WebKitVIew.swift */,
 			);
@@ -104,6 +109,7 @@
 				8FB6EFAA21F12B28004BC78F /* OpenURLTests.swift */,
 				8FB6EFB021F1402C004BC78F /* Threading.swift */,
 				8FB6EFB421F26BCC004BC78F /* GithubManager.swift */,
+				8FB6EFB821F6890F004BC78F /* SearchViewController.swift */,
 			);
 			path = NetworkClasses;
 			sourceTree = "<group>";
@@ -181,6 +187,8 @@
 			files = (
 				8FB6EFB121F1402C004BC78F /* Threading.swift in Sources */,
 				8FB6EF9B21F12AD9004BC78F /* MainViewController.swift in Sources */,
+				8FB6EFB921F6890F004BC78F /* SearchViewController.swift in Sources */,
+				8FB6EFB721F6626D004BC78F /* ThreadingViewController.swift in Sources */,
 				8FB6EFB521F26BCC004BC78F /* GithubManager.swift in Sources */,
 				8FB6EFAB21F12B28004BC78F /* OpenURLTests.swift in Sources */,
 				8FB6EF9921F12AD9004BC78F /* AppDelegate.swift in Sources */,

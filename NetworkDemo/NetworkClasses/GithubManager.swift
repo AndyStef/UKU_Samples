@@ -81,23 +81,23 @@ extension Endpoint {
 }
 
 class DataLoader {
-    func request(_ endpoint: Endpoint,
-                 then handler: @escaping (Result<Data>) -> Void) {
-        guard let url = endpoint.url else {
-            return handler(.failure(Error.invalidURL))
-        }
-
-        let task = urlSession.dataTask(with: url) {
-            data, _, error in
-
-            let result = data.map(Result.success) ??
-                .failure(Error.network(error))
-
-            handler(result)
-        }
-
-        task.resume()
-    }
+//    func request(_ endpoint: Endpoint,
+//                 then handler: @escaping (Result<Data>) -> Void) {
+//        guard let url = endpoint.url else {
+//            return handler(.failure(Error.invalidURL))
+//        }
+//
+//        let task = urlSession.dataTask(with: url) {
+//            data, _, error in
+//
+//            let result = data.map(Result.success) ??
+//                .failure(Error.network(error))
+//
+//            handler(result)
+//        }
+//
+//        task.resume()
+//    }
 }
 
 extension URL {
