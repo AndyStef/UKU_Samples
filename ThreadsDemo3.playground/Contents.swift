@@ -200,3 +200,72 @@ func semaphoreTest() {
 
     semaphore.wait(timeout: .now() + 5)
 }
+
+func gcdAlternative() {
+    //performSelector(inBackground: #selector(fetchJSON), with: nil)
+    //performSelector(onMainThread: #selector(showError), with: nil, waitUntilDone: false)
+}
+
+// Sync
+func load() -> String { return "" }
+
+// Async
+func load(completion: (String) -> Void) { completion("") }
+
+func threadsExamples() {
+    let _ = DispatchQueue.main
+    let _ = DispatchQueue.global(qos: .background)
+    let _ = DispatchQueue.global(qos: .default)
+    let _ = DispatchQueue.global(qos: .unspecified)
+    let _ = DispatchQueue.global(qos: .userInitiated)
+    let _ = DispatchQueue.global(qos: .userInteractive)
+    let _ = DispatchQueue.global(qos: .utility)
+    let _ = DispatchQueue(label: "com.test.queues.serial")
+    let _ = DispatchQueue(label: "com.test.queues.concurrent",
+                          qos: .userInteractive, attributes: .concurrent)
+    let _ = Thread.isMainThread
+    let _ = Thread.current
+    let _ = Thread.isMultiThreaded()
+    Thread.sleep(forTimeInterval: 300)
+    Thread.sleep(until: Date())
+    
+    // Delay execution
+    DispatchQueue.main.asyncAfter(deadline: .now() + 300, execute: {})
+    
+    // Concurrent loop
+    DispatchQueue.concurrentPerform(iterations: 5, execute: { _ in })
+}
+
+func threadTest() {
+    let t = Thread {
+        print(Thread.current.name ?? "")
+        let timer = Timer(timeInterval: 1, repeats: true) { t in
+            print("tick")
+        }
+        RunLoop.current.add(timer, forMode: RunLoop.Mode.default)
+        
+        RunLoop.current.run()
+        RunLoop.current.run(mode: RunLoop.Mode.common, before: Date.distantPast)
+    }
+    t.name = "my-thread"
+    t.start()
+}
+
+func deadlock() {
+    let queue = DispatchQueue(label: "com.theswiftdev.queues.serial")
+    queue.sync {
+        // do some sync work
+        queue.sync {
+            // this won't be executed -> deadlock!
+        }
+    }
+    
+    //What you are trying to do here is to launch the main thread synchronously from a background thread before it exits. This is a logical error.
+    //https://stackoverflow.com/questions/49258413/dispatchqueue-crashing-with-main-sync-in-swift?rq=1
+    DispatchQueue.global(qos: .utility).sync {
+        // do some background task
+        DispatchQueue.main.sync {
+            // app will crash
+        }
+    }
+}

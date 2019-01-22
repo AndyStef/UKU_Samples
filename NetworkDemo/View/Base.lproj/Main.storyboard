@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="80v-Mn-Eso">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hEC-hL-A8w">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -127,5 +127,83 @@
             </objects>
             <point key="canvasLocation" x="2384.8000000000002" y="23.838080959520241"/>
         </scene>
+        <!--Dispatch Groups View Controller-->
+        <scene sceneID="Oyl-Cd-4PU">
+            <objects>
+                <viewController id="hEC-hL-A8w" customClass="DispatchGroupsViewController" customModule="NetworkDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S8M-Vw-Nka">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="aDU-YJ-JGz">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="307.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="yHc-Yw-PHh">
+                                        <rect key="frame" x="0.0" y="0.0" width="186.5" height="307.5"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Q8O-11-z27">
+                                        <rect key="frame" x="188.5" y="0.0" width="186.5" height="307.5"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="pPa-nA-jTQ">
+                                <rect key="frame" x="0.0" y="309.5" width="375" height="307.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="7LK-4D-3ql">
+                                        <rect key="frame" x="0.0" y="0.0" width="186.5" height="307.5"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="uux-z0-pg0">
+                                        <rect key="frame" x="188.5" y="0.0" width="186.5" height="307.5"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4UT-Te-5ch">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.81568627449999997" green="0.0078431372550000003" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="3b8-pU-Hkl"/>
+                                </constraints>
+                                <state key="normal" title="Download">
+                                    <color key="titleColor" red="0.92549019610000005" green="0.76470588240000004" blue="0.043137254899999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="download:" destination="hEC-hL-A8w" eventType="touchUpInside" id="InK-Bd-vzd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aDU-YJ-JGz" firstAttribute="height" secondItem="pPa-nA-jTQ" secondAttribute="height" id="1ZD-T0-43D"/>
+                            <constraint firstItem="4UT-Te-5ch" firstAttribute="top" secondItem="pPa-nA-jTQ" secondAttribute="bottom" id="53P-8R-7N8"/>
+                            <constraint firstItem="pPa-nA-jTQ" firstAttribute="trailing" secondItem="WoE-7p-6za" secondAttribute="trailing" id="5le-N3-2Bk"/>
+                            <constraint firstItem="aDU-YJ-JGz" firstAttribute="trailing" secondItem="WoE-7p-6za" secondAttribute="trailing" id="8x1-Jr-I6a"/>
+                            <constraint firstItem="4UT-Te-5ch" firstAttribute="leading" secondItem="WoE-7p-6za" secondAttribute="leading" id="EtT-qW-O2d"/>
+                            <constraint firstItem="aDU-YJ-JGz" firstAttribute="top" secondItem="S8M-Vw-Nka" secondAttribute="top" id="J3N-vi-6mO"/>
+                            <constraint firstItem="aDU-YJ-JGz" firstAttribute="leading" secondItem="WoE-7p-6za" secondAttribute="leading" id="JhM-9s-bMI"/>
+                            <constraint firstItem="pPa-nA-jTQ" firstAttribute="top" secondItem="aDU-YJ-JGz" secondAttribute="bottom" constant="2" id="RdI-ST-5Fl"/>
+                            <constraint firstItem="pPa-nA-jTQ" firstAttribute="leading" secondItem="WoE-7p-6za" secondAttribute="leading" id="Stn-w2-6we"/>
+                            <constraint firstItem="WoE-7p-6za" firstAttribute="bottom" secondItem="4UT-Te-5ch" secondAttribute="bottom" id="pzW-MU-AzE"/>
+                            <constraint firstItem="WoE-7p-6za" firstAttribute="trailing" secondItem="4UT-Te-5ch" secondAttribute="trailing" id="z6p-ty-197"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WoE-7p-6za"/>
+                    </view>
+                    <connections>
+                        <outlet property="firstImageView" destination="yHc-Yw-PHh" id="d1N-Ji-EAw"/>
+                        <outlet property="fourthImageView" destination="uux-z0-pg0" id="u2Q-xC-Kua"/>
+                        <outlet property="secondImageView" destination="Q8O-11-z27" id="F1W-PF-epC"/>
+                        <outlet property="thirdImageView" destination="7LK-4D-3ql" id="jm7-lf-T9H"/>
+                        <outletCollection property="imageViews" destination="yHc-Yw-PHh" collectionClass="NSMutableArray" id="isN-KG-xQM"/>
+                        <outletCollection property="imageViews" destination="Q8O-11-z27" collectionClass="NSMutableArray" id="lYq-PD-PYk"/>
+                        <outletCollection property="imageViews" destination="7LK-4D-3ql" collectionClass="NSMutableArray" id="BzP-Jg-k2J"/>
+                        <outletCollection property="imageViews" destination="uux-z0-pg0" collectionClass="NSMutableArray" id="QC0-ea-UXM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3qf-Vt-lQf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2458.4000000000001" y="789.35532233883066"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="placeholder" width="275" height="183"/>
+    </resources>
 </document>

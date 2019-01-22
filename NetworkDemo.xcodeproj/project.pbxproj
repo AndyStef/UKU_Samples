@@ -17,6 +17,9 @@
 		8FB6EFB321F25A26004BC78F /* WebKitVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB6EFB221F25A26004BC78F /* WebKitVIew.swift */; };
 		8FB6EFB521F26BCC004BC78F /* GithubManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB6EFB421F26BCC004BC78F /* GithubManager.swift */; };
 		8FB6EFB721F6626D004BC78F /* ThreadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB6EFB621F6626D004BC78F /* ThreadingViewController.swift */; };
+		A2142FB921F726130047F4EA /* ThreadLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2142FB821F726130047F4EA /* ThreadLinks.swift */; };
+		A2142FBB21F726660047F4EA /* Useful comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2142FBA21F726660047F4EA /* Useful comments.swift */; };
+		A2142FBD21F76E860047F4EA /* DispatchGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2142FBC21F76E860047F4EA /* DispatchGroupsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		8FB6EFB221F25A26004BC78F /* WebKitVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKitVIew.swift; sourceTree = "<group>"; };
 		8FB6EFB421F26BCC004BC78F /* GithubManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubManager.swift; sourceTree = "<group>"; };
 		8FB6EFB621F6626D004BC78F /* ThreadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadingViewController.swift; sourceTree = "<group>"; };
+		A2142FB821F726130047F4EA /* ThreadLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadLinks.swift; sourceTree = "<group>"; };
+		A2142FBA21F726660047F4EA /* Useful comments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Useful comments.swift"; sourceTree = "<group>"; };
+		A2142FBC21F76E860047F4EA /* DispatchGroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchGroupsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,7 @@
 		8FB6EF9721F12AD9004BC78F /* NetworkDemo */ = {
 			isa = PBXGroup;
 			children = (
+				A2142FB721F725F90047F4EA /* Treads */,
 				8FB6EFA421F12ADA004BC78F /* Info.plist */,
 				8FB6EFAF21F13028004BC78F /* NetworkClasses */,
 				8FB6EFAD21F1300A004BC78F /* Controller */,
@@ -89,6 +96,7 @@
 				8FB6EFB621F6626D004BC78F /* ThreadingViewController.swift */,
 				8FB6EF9A21F12AD9004BC78F /* MainViewController.swift */,
 				8FB6EFB221F25A26004BC78F /* WebKitVIew.swift */,
+				A2142FBC21F76E860047F4EA /* DispatchGroupsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -105,10 +113,19 @@
 			isa = PBXGroup;
 			children = (
 				8FB6EFAA21F12B28004BC78F /* OpenURLTests.swift */,
-				8FB6EFB021F1402C004BC78F /* Threading.swift */,
 				8FB6EFB421F26BCC004BC78F /* GithubManager.swift */,
 			);
 			path = NetworkClasses;
+			sourceTree = "<group>";
+		};
+		A2142FB721F725F90047F4EA /* Treads */ = {
+			isa = PBXGroup;
+			children = (
+				8FB6EFB021F1402C004BC78F /* Threading.swift */,
+				A2142FB821F726130047F4EA /* ThreadLinks.swift */,
+				A2142FBA21F726660047F4EA /* Useful comments.swift */,
+			);
+			path = Treads;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,9 +202,12 @@
 				8FB6EFB121F1402C004BC78F /* Threading.swift in Sources */,
 				8FB6EF9B21F12AD9004BC78F /* MainViewController.swift in Sources */,
 				8FB6EFB721F6626D004BC78F /* ThreadingViewController.swift in Sources */,
+				A2142FBB21F726660047F4EA /* Useful comments.swift in Sources */,
 				8FB6EFB521F26BCC004BC78F /* GithubManager.swift in Sources */,
 				8FB6EFAB21F12B28004BC78F /* OpenURLTests.swift in Sources */,
+				A2142FB921F726130047F4EA /* ThreadLinks.swift in Sources */,
 				8FB6EF9921F12AD9004BC78F /* AppDelegate.swift in Sources */,
+				A2142FBD21F76E860047F4EA /* DispatchGroupsViewController.swift in Sources */,
 				8FB6EFB321F25A26004BC78F /* WebKitVIew.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
