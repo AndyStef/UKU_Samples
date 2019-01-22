@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  FlickrSearch
 //
-//  Created by Kyle Clegg on 12/09/14.
-//  Copyright (c) 2014 Kyle Clegg. All rights reserved.
+//  Created by Andy Stef on 12/09/18.
+//  Copyright (c) 2018 Andy Stef. All rights reserved.
 //
 
 import UIKit

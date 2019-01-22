@@ -96,6 +96,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A2142FB321F70E480047F4EA /* Recources */ = {
+			isa = PBXGroup;
+			children = (
+				D79E16A91A3830EA004B0DD8 /* AppDelegate.swift */,
+				D79E16B01A3830EA004B0DD8 /* Images.xcassets */,
+				D7102CFE1A38FC4D004F329C /* FlickrSearch-Bridging-Header.h */,
+			);
+			path = Recources;
+			sourceTree = "<group>";
+		};
+		A2142FB421F70E760047F4EA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D79E16AD1A3830EA004B0DD8 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A2142FB521F70E980047F4EA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D79E16AB1A3830EA004B0DD8 /* SearchViewController.swift */,
+				D7D499F31A39074E0053F50F /* PhotoViewController.swift */,
+				D79E16C91A383967004B0DD8 /* SearchResultCell.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A2142FB621F70F240047F4EA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D79E16CF1A3839E6004B0DD8 /* FlickrPhoto.swift */,
+				D7D499F11A3900700053F50F /* FlickrProvider.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		D7102CC91A38FB96004F329C /* SDWebImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,15 +201,10 @@
 		D79E16A61A3830EA004B0DD8 /* FlickrSearch */ = {
 			isa = PBXGroup;
 			children = (
-				D79E16A91A3830EA004B0DD8 /* AppDelegate.swift */,
-				D79E16AD1A3830EA004B0DD8 /* Main.storyboard */,
-				D79E16AB1A3830EA004B0DD8 /* SearchViewController.swift */,
-				D7D499F31A39074E0053F50F /* PhotoViewController.swift */,
-				D79E16C91A383967004B0DD8 /* SearchResultCell.swift */,
-				D79E16CF1A3839E6004B0DD8 /* FlickrPhoto.swift */,
-				D7D499F11A3900700053F50F /* FlickrProvider.swift */,
-				D7102CFE1A38FC4D004F329C /* FlickrSearch-Bridging-Header.h */,
-				D79E16B01A3830EA004B0DD8 /* Images.xcassets */,
+				A2142FB621F70F240047F4EA /* Model */,
+				A2142FB521F70E980047F4EA /* Controller */,
+				A2142FB421F70E760047F4EA /* View */,
+				A2142FB321F70E480047F4EA /* Recources */,
 				D7102CC91A38FB96004F329C /* SDWebImage */,
 				D79E16A71A3830EA004B0DD8 /* Supporting Files */,
 			);
@@ -401,8 +433,8 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kyleclegg.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "FlickrSearch/FlickrSearch-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "FlickrSearch/Recources/FlickrSearch-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -421,8 +453,8 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kyleclegg.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "FlickrSearch/FlickrSearch-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "FlickrSearch/Recources/FlickrSearch-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

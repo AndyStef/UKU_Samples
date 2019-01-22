@@ -2,8 +2,8 @@
 //  FlickrAPI.swift
 //  FlickrSearch
 //
-//  Created by Kyle Clegg on 12/10/14.
-//  Copyright (c) 2014 Kyle Clegg. All rights reserved.
+//  Created by Andy Stef on 12/09/18.
+//  Copyright (c) 2018 Andy Stef. All rights reserved.
 //
 
 import Foundation
@@ -12,23 +12,32 @@ class FlickrProvider {
     
     typealias FlickrResponse = (NSError?, [FlickrPhoto]?) -> Void
     
-    struct Keys {
+    private struct Keys {
         static let flickrKey = "edfbda1311ced294eafbfb8960b97bf4"
     }
     
-    struct Errors {
+     struct Errors {
         static let invalidAccessErrorCode = 100
     }
     
-    class func fetchPhotosForSearchText(searchText: String, onCompletion: @escaping FlickrResponse) -> Void {
-        let escapedSearchText: String = searchText.addingPercentEncoding(withAllowedCharacters:.urlHostAllowed)!
+    class func fetchPhotosForSearchText(searchText: String, completion: @escaping FlickrResponse) -> Void {
+        guard let escapedSearchText = searchText.addingPercentEncoding(withAllowedCharacters:.urlHostAllowed)  else {
+            // here should completion with custom error
+            return
+        }
+        
         let urlString: String = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=\(Keys.flickrKey)&tags=\(escapedSearchText)&per_page=25&format=json&nojsoncallback=1"
-        let url: NSURL = NSURL(string: urlString)!
-        let searchTask = URLSession.shared.dataTask(with: url as URL, completionHandler: {data, response, error -> Void in
-            
-            if error != nil {
+        
+        guard let url = URL(string: urlString) else {
+            // here should completion with custom error
+            return
+        }
+        
+        let urlSession = URLSession.shared
+        let searchTask = urlSession.dataTask(with: url, completionHandler: { data, response, error in
+            if let error = error {
                 print("Error fetching photos: \(error)")
-                onCompletion(error as NSError?, nil)
+                completion(error as NSError?, nil)
                 return
             }
             
@@ -39,7 +48,7 @@ class FlickrProvider {
                 if let statusCode = results["code"] as? Int {
                     if statusCode == Errors.invalidAccessErrorCode {
                         let invalidAccessError = NSError(domain: "com.flickr.api", code: statusCode, userInfo: nil)
-                        onCompletion(invalidAccessError, nil)
+                        completion(invalidAccessError, nil)
                         return
                     }
                 }
@@ -59,16 +68,14 @@ class FlickrProvider {
                     return flickrPhoto
                 }
                 
-                onCompletion(nil, flickrPhotos)
+                completion(nil, flickrPhotos)
                 
             } catch let error as NSError {
                 print("Error parsing JSON: \(error)")
-                onCompletion(error, nil)
+                completion(error, nil)
                 return
             }
-            
         })
         searchTask.resume()
     }
-    
 }
