@@ -20,3 +20,4 @@ import Foundation
 // https://www.swiftbysundell.com/posts/a-deep-dive-into-grand-central-dispatch-in-swift
 // https://blackpixel.com/writing/2013/11/performselectoronmainthread-vs-dispatch-async.html
 // https://www.objc.io/issues/2-concurrency/thread-safe-class-design/
+// https://habr.com/ru/post/335756/

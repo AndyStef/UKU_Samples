@@ -135,6 +135,14 @@ class DispatchGroupsViewController: UIViewController {
     
     // One by one
     private func syncQueue() {
+        
+        // Crash!!!!!!
+//        DispatchQueue.main.sync {
+//            print("Some code")
+//        }
+        
+        
+        
 //        let queue = DispatchQueue(label: "test")
         let queue = DispatchQueue(label: "test", qos: .userInitiated, attributes: .concurrent)
         
