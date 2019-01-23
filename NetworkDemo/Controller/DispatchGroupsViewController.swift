@@ -33,7 +33,8 @@ class DispatchGroupsViewController: UIViewController {
 //        loadUsingDispatchGroup1()
 //        withoutBackground()
 //        differentQoS()
-        syncQueue()
+//        syncQueue()
+        downloadWithOperations()
     }
     
     // Data(contestOf: URL)
@@ -171,5 +172,34 @@ class DispatchGroupsViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    private var images = [UIImage]()
+    
+    private func downloadWithOperations() {
+        let operationQueue = OperationQueue()
+        
+        for i in 0...3 {
+            operationQueue.addOperation {
+                guard let imageURL = URL(string: self.imageURLs[i]),
+                    let data = try? Data(contentsOf: imageURL) else {
+                        return
+                }
+                
+                self.images.append(UIImage(data: data) ?? UIImage())
+//                OperationQueue.main.addOperation {
+//                    self.imageViews[i].image = UIImage(data: data)
+//                }
+            }
+        }
+        
+        
+//        DispatchQueue.main.async {
+//            operationQueue.waitUntilAllOperationsAreFinished()
+//            self.imageViews.enumerated().forEach { offset, imageView in
+//                imageView.image = self.images[offset]
+//            }
+//        }
+//
     }
 }
